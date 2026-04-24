@@ -45,7 +45,7 @@ computationalElement::computationalElement(const global& glb)
         iInd[Nm-n-1]=iInd[mM]; jInd[Nm-n-1]=jInd[mM]; kInd[Nm-n-1]=kInd[mM];
         iInd[mM]=iIs; jInd[mM]=jIs; kInd[mM]=kIs;
     }
-    matrix gP=gaussPointsAndWeights3D(glb.ctr.Nq); // reads the points and weights for Gauss volume quadrature of order oq
+    matrix gP=gaussPointsAndWeights3D(glb.ctr.N*2); // reads the points and weights for Gauss volume quadrature of order oq
     Npq=gP.nR();
     rq=new vector3D[Npq];
     std::cout << "Npq=" << Npq << std::endl;
@@ -78,7 +78,7 @@ computationalElement::computationalElement(const global& glb)
     }
     F=PHIF*EF; // filtering matrix for points inside the volume
 //
-    gP=gaussPointsAndWeights2D(glb.ctr.Nq2);  // reads the points and weights for Gauss face quadrature of order oq2
+    gP=gaussPointsAndWeights2D(glb.ctr.N*2);  // reads the points and weights for Gauss face quadrature of order oq2
     Npq2=gP.nR(); vector3D rq2[Npq2*4];
     std::cout << "Npq2=" << Npq2 << std::endl;
     w2D.dim(Npq2*4);

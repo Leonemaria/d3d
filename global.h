@@ -16,8 +16,6 @@ struct physics
 struct control
 {
     int N;        // polynomials max order
-    int Nq;       // volume quadrature degree of accuracy
-    int Nq2;      // face quadrature degree of accuracy
     int startStep;// initial number of time steps
     int endStep;  // final number of time steps
     int nStSave;  // solution damping period

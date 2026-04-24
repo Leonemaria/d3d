@@ -44,8 +44,6 @@ void readPhysics(std::ifstream &fin, global& glb)
 void readRun(std::ifstream &fin, global& glb)
 {
     fin >> glb.ctr.N; skipLine(fin, 1);        // polynomials max order
-    fin >> glb.ctr.Nq; skipLine(fin, 1);       // volume quadrature degree of accuracy
-    fin >> glb.ctr.Nq2; skipLine(fin, 1);      // face quadrature degree of accuracy
     fin >> glb.sch.LES; skipLine(fin, 1);      // kind of LES model
     fin >> glb.sch.CIF; skipLine(fin, 1);      // kind of convective intercell numerical flux
     fin >> glb.ctr.startStep; skipLine(fin, 1);// initial number of time steps
